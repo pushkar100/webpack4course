@@ -1,0 +1,13 @@
+.footer {
+    height: 70px;
+    padding: 30px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #202020;
+}
+.footer a {
+    display: inline-block;
+    color: #fffb00;
+    padding: 10px 0;
+}

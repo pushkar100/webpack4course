@@ -1,0 +1,9 @@
+.header {
+    height: 120px;
+    margin-bottom: 40px;
+    background: #c7dcff;
+    box-shadow: 0 0 2px #a7b7d1;
+}
+.header img {
+    padding: 10px
+}

@@ -1,0 +1,17 @@
+.posts {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7fff5;
+    border-radius: 5px;
+    display: inline-block;
+    width: 50%;
+}
+.posts .posts-header {
+    font-weight: bold;
+}
+.posts .post {
+    padding: 10px;
+}
+.post + .post { 
+    border-top: 1px solid #c05050;
+}
