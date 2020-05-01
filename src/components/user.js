@@ -42,6 +42,8 @@ const createUser = () => {
     return User
 }
 
+export default createUser
+
 /*
 HTML template for understanding output of the above JS snippet: 
 <div class="user">

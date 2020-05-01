@@ -24,6 +24,8 @@ const createFooter = () => {
     return Footer
 }
 
+export default createFooter 
+
 /*
 HTML template for understanding output of the above JS snippet: 
 <div class="footer">

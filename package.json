@@ -1,0 +1,29 @@
+{
+  "name": "webpack4course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "webpack:dev": "npm run webpack -- --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushkar100/webpack4course.git"
+  },
+  "keywords": [],
+  "author": "Pushkar DK <pushkar100@gmail.com> (http://www.pushkardk.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pushkar100/webpack4course/issues"
+  },
+  "homepage": "https://github.com/pushkar100/webpack4course#readme",
+  "devDependencies": {
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  },
+  "dependencies": {
+    "lodash": "4.17.15"
+  }
+}
