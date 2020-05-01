@@ -1,3 +1,5 @@
+import '../styles/friends.css'
+
 import { snakeCase } from 'lodash-es'
 import { wrapWithParentheses } from '../helpers/index'
 

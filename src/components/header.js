@@ -1,3 +1,5 @@
+import '../styles/header.css'
+
 // Data required for the function to render the DOM:
 const image = 'images/social-logo.png'
 

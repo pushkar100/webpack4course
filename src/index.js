@@ -1,6 +1,8 @@
 // The main file: Starts execution of Javascript
 // It invokes methods defined in other files (components)
 
+import './styles/index.css'
+
 import createFooter from './components/footer'
 import createFriends from './components/friends'
 import createHeader from './components/header'

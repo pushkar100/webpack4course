@@ -1,3 +1,5 @@
+import '../styles/footer.css'
+
 // Data required for the function to render the DOM:
 const externalLink = 'https://github.com/pushkar100/webpack4course'
 

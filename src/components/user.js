@@ -1,3 +1,5 @@
+import '../styles/user.css'
+
 // Data required for the function to render the DOM:
 import userInfo from '../data/userInfo.json'
 

@@ -10,7 +10,7 @@
     height: 100px;
     border-radius: 50%;
     border: 5px solid #60ac52;
-    background: url('../images/avatar.png') no-repeat;
+    /* background: url('../../images/avatar.png') no-repeat; */
     background-size: contain;
 }
 .user .user-data {
