@@ -26,3 +26,6 @@ body.appendChild(createFriends())
 
 // Append Footer from createPosts():
 body.appendChild(createFooter())
+
+// DefinePlugin Demo:
+console.log('APP VERSION', VERSION)

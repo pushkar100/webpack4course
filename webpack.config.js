@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = ({ mode }) => ({
     mode,
@@ -56,6 +57,9 @@ module.exports = ({ mode }) => ({
                 course: 'Webpack 4 session with Pushkar & Ankush'
             }
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new webpack.DefinePlugin({
+            VERSION: JSON.stringify('1.0.0')
+        })
     ]
 })
