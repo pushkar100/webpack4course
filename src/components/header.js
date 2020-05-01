@@ -11,6 +11,10 @@ const createHeader = () => {
     const Header = document.createElement('div')
     Header.classList.add('header')
 
+    if (process.env.NODE_ENV === 'development') {
+        Header.style.backgroundColor = '#0b78de'
+    }
+
     // Create child elements:
     const img = document.createElement('img')
     img.src = socialLogo

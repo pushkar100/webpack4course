@@ -59,7 +59,8 @@ module.exports = ({ mode }) => ({
         }),
         new CleanWebpackPlugin(),
         new webpack.DefinePlugin({
-            VERSION: JSON.stringify('1.0.0')
+            VERSION: JSON.stringify('1.0.0'),
+            'process.env.NODE_ENV': JSON.stringify(mode)
         })
     ]
 })
