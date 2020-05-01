@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { joinByPipe, convertTo12hrClock } from '../helpers'
+import { joinByPipe, convertTo12hrClock } from '../helpers/index'
 
 // Data required for the function to render the DOM:
 const postsData = [
