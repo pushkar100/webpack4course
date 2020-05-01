@@ -8,7 +8,7 @@ module.exports = ({ mode }) => ({
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist') // Needs to be an absolute path
     },
     module: {
         rules: [
