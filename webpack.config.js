@@ -16,10 +16,9 @@ module.exports = ({ mode }) => ({
             {
                 test: /\.(png|jpg|jpeg|svg|gif)$/,
                 use: {
-                    loader: 'file-loader',
+                    loader: 'url-loader',
                     options: {
-                        name: '[name].[ext]',
-                        outputPath: 'images'
+                        limit: 10000
                     }
                 }
             }
