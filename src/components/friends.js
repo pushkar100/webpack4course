@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { snakeCase } from 'lodash-es'
 import { wrapWithParentheses } from '../helpers/index'
 
 /**
@@ -25,7 +25,7 @@ const createFriends = () => {
         const friendDOM = document.createElement('div')
         friendDOM.classList.add('friend')
         friendDOM.innerText = `${name} ${
-            wrapWithParentheses(_.snakeCase(status)) // Lodash use
+            wrapWithParentheses(snakeCase(status)) // Lodash use
         }`
         friendsList.appendChild(friendDOM)
     }

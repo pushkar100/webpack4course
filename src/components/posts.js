@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { join } from 'lodash-es'
 import { joinByPipe, convertTo12hrClock } from '../helpers/index'
 
 // Data required for the function to render the DOM:
@@ -29,7 +29,7 @@ const createPosts = () => {
         }</div>`)
     }
     const collectPosts = document.createElement('div')
-    collectPosts.innerHTML = _.join(arrayOfPosts, '\n') // Lodash use
+    collectPosts.innerHTML = join(arrayOfPosts, '\n') // Lodash use
 
     // Append all child elements to parent:
     Posts.appendChild(postHeader)
