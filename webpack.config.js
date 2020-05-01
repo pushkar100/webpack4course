@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = ({ mode }) => ({
     mode,
@@ -46,5 +47,13 @@ module.exports = ({ mode }) => ({
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Social Media Website',
+            meta: {
+                course: 'Webpack 4 session with Pushkar & Ankush'
+            }
+        })
+    ]
 })
