@@ -1,7 +1,7 @@
 import '../styles/header.css'
 
 // Data required for the function to render the DOM:
-const image = 'images/social-logo.png'
+import socialLogo from '../images/social-logo.png'
 
 /**
  * A function that creates & returns the header dom element
@@ -13,7 +13,7 @@ const createHeader = () => {
 
     // Create child elements:
     const img = document.createElement('img')
-    img.src = image
+    img.src = socialLogo
 
     // Append all child elements to parent:
     Header.appendChild(img)

@@ -9,8 +9,8 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 5px solid #60ac52;
-    /* background: url('../../images/avatar.png') no-repeat; */
+    border: 5px solid hsl(111, 35%, 50%);
+    background: url('../images/avatar.png') no-repeat;
     background-size: contain;
 }
 .user .user-data {
