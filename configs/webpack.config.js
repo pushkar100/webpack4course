@@ -11,10 +11,6 @@ module.exports = ({ mode }) => {
         entry: './src/index.js',
         module: {
             rules: [
-                { 
-                    test: /\.css$/, 
-                    use: [ 'style-loader', 'css-loader' ]
-                },
                 {
                     test: /\.(png|jpg|jpeg|svg|gif)$/,
                     use: {
