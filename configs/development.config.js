@@ -4,6 +4,7 @@ module.exports = () => ({
     devtool: 'inline-source-map',
     output: {
         filename: '[name].bundle.js',
+        chunkFilename: '[name].js',
         path: path.resolve(__dirname, '../dist') // Needs to be an absolute path
     },
     module: {

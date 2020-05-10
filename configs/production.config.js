@@ -8,6 +8,7 @@ module.exports = () => ({
     devtool: 'nosources-source-map',
     output: {
         filename: '[name].[hash].js',
+        chunkFilename: '[name].[hash].js',
         path: path.resolve(__dirname, '../dist') // Needs to be an absolute path
     },
     optimization: {
