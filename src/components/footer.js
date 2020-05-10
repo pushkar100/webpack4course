@@ -1,5 +1,7 @@
 import '../styles/footer.css'
 
+import button from './button'
+
 // Data required for the function to render the DOM:
 const externalLink = 'https://github.com/pushkar100/webpack4course'
 
@@ -21,9 +23,27 @@ const createFooter = () => {
     const madeWith = document.createElement('div')
     madeWith.innerHTML = 'Made with &#9829; during quarantine'
 
+    // Create the buttons:
+    const buttonHolder = document.createElement('div')
+    const redButton = button('Red')
+    const greenButton = button('Green')
+    buttonHolder.appendChild(redButton)
+    buttonHolder.appendChild(greenButton)
+
+    // Change theme on clicking the buttons:
+    redButton.addEventListener('click', () => {
+        import('../themes/redTheme.js')
+        .then(({ default: redTheme }) => redTheme())
+    })
+    greenButton.addEventListener('click', () => {
+        import('../themes/greenTheme.js')
+        .then(({ default: greenTheme }) => greenTheme())
+    })
+
     // Append all child elements to parent:
     Footer.appendChild(link)
     Footer.appendChild(madeWith)
+    Footer.appendChild(buttonHolder)
 
     return Footer
 }
