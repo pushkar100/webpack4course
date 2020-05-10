@@ -2,6 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const terserPlugin = require('terser-webpack-plugin')
+const compressionPlugin = require('compression-webpack-plugin')
 
 module.exports = () => ({
     devtool: 'nosources-source-map',
@@ -24,6 +25,9 @@ module.exports = () => ({
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css'
+        }),
+        new compressionPlugin({
+            algorithm: 'brotliCompress'
         })
     ]
 })
