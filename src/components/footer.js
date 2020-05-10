@@ -25,7 +25,7 @@ const createFooter = () => {
         aboutLink.href = './about.html'
     } else {
         aboutLink.innerText = 'Home'
-        aboutLink.href = './index.html'
+        aboutLink.href = './'
     }
     
 

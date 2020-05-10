@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
@@ -48,6 +49,22 @@ module.exports = ({ mode }) => {
             ]
         },
         plugins: [
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                chunks: ['index'],
+                title: 'Social Media Website',
+                meta: {
+                    course: 'Webpack 4 session with Pushkar & Ankush'
+                }
+            }),
+            new HtmlWebpackPlugin({
+                filename: 'about.html',
+                chunks: ['about'],
+                title: 'About: Social Media Website',
+                meta: {
+                    course: 'Webpack 4 session with Pushkar & Ankush'
+                }
+            }),
             new CleanWebpackPlugin(),
             new webpack.DefinePlugin({
                 VERSION: JSON.stringify('1.0.0'),
