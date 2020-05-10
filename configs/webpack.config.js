@@ -8,15 +8,7 @@ const modeConfig = mode => require(`./${mode}.config.js`)()
 module.exports = ({ mode }) => {
     return webpackMerge({
         mode,
-        optimization: {
-            splitChunks: {
-                chunks: 'all'
-            }
-        },
-        entry: {
-            index: './src/index.js',
-            about: './src/about.js'
-        },
+        entry: './src/index.js',
         module: {
             rules: [
                 {
@@ -55,17 +47,7 @@ module.exports = ({ mode }) => {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                filename: 'index.html',
-                chunks: ['index'],
                 title: 'Social Media Website',
-                meta: {
-                    course: 'Webpack 4 session with Pushkar & Ankush'
-                }
-            }),
-            new HtmlWebpackPlugin({
-                filename: 'about.html',
-                chunks: ['about'],
-                title: 'About: Social Media Website',
                 meta: {
                     course: 'Webpack 4 session with Pushkar & Ankush'
                 }

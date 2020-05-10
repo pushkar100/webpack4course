@@ -17,24 +17,12 @@ const createFooter = () => {
     const link = document.createElement('a')
     link.innerText = 'Source code'
     link.href = externalLink
-    
-    // The link to /about page:
-    const aboutLink = document.createElement('a')
-    if (window.location.pathname === '/') {
-        aboutLink.innerText = 'About'
-        aboutLink.href = './about.html'
-    } else {
-        aboutLink.innerText = 'Home'
-        aboutLink.href = './'
-    }
-    
 
     const madeWith = document.createElement('div')
     madeWith.innerHTML = 'Made with &#9829; during quarantine'
 
     // Append all child elements to parent:
     Footer.appendChild(link)
-    Footer.appendChild(aboutLink)
     Footer.appendChild(madeWith)
 
     return Footer
