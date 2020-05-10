@@ -3,6 +3,8 @@ import '../styles/footer.css'
 // Data required for the function to render the DOM:
 const externalLink = 'https://github.com/pushkar100/webpack4course'
 
+// setTimeout(() => { throw new Error('Custom error') }, 4000)
+
 /**
  * A function that creates & returns the footer dom element
  */
