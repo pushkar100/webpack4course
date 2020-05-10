@@ -8,6 +8,11 @@ const modeConfig = mode => require(`./${mode}.config.js`)()
 module.exports = ({ mode }) => {
     return webpackMerge({
         mode,
+        optimization: {
+            splitChunks: {
+                chunks: 'all'
+            }
+        },
         entry: {
             index: './src/index.js',
             about: './src/about.js'
