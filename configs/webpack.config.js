@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
@@ -8,7 +7,10 @@ const modeConfig = mode => require(`./${mode}.config.js`)()
 module.exports = ({ mode }) => {
     return webpackMerge({
         mode,
-        entry: './src/index.js',
+        entry: {
+            index: './src/index.js',
+            about: './src/about.js'
+        },
         module: {
             rules: [
                 {
@@ -46,12 +48,6 @@ module.exports = ({ mode }) => {
             ]
         },
         plugins: [
-            new HtmlWebpackPlugin({
-                title: 'Social Media Website',
-                meta: {
-                    course: 'Webpack 4 session with Pushkar & Ankush'
-                }
-            }),
             new CleanWebpackPlugin(),
             new webpack.DefinePlugin({
                 VERSION: JSON.stringify('1.0.0'),

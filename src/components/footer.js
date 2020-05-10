@@ -20,8 +20,14 @@ const createFooter = () => {
     
     // The link to /about page:
     const aboutLink = document.createElement('a')
-    aboutLink.innerText = 'About'
-    aboutLink.href = './about.html'
+    if (window.location.pathname === '/') {
+        aboutLink.innerText = 'About'
+        aboutLink.href = './about.html'
+    } else {
+        aboutLink.innerText = 'Home'
+        aboutLink.href = './index.html'
+    }
+    
 
     const madeWith = document.createElement('div')
     madeWith.innerHTML = 'Made with &#9829; during quarantine'
