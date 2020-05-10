@@ -8,6 +8,9 @@ const modeConfig = mode => require(`./${mode}.config.js`)()
 module.exports = ({ mode }) => {
     return webpackMerge({
         mode,
+        optimization: {
+            runtimeChunk: false
+        },
         entry: './src/index.js',
         module: {
             rules: [
