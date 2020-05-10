@@ -27,7 +27,9 @@ module.exports = () => ({
             chunkFilename: '[id].[hash].css'
         }),
         new compressionPlugin({
-            algorithm: 'brotliCompress'
+            filename: '[path].gz',
+            test: /\.(js|css)$/,
+            algorithm: 'gzip'
         })
     ]
 })
