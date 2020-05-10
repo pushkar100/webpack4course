@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = () => ({
     devtool: 'nosources-source-map',
@@ -30,6 +31,22 @@ module.exports = () => ({
             filename: '[path].gz',
             test: /\.(js|css)$/,
             algorithm: 'gzip'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            chunks: ['index'],
+            title: 'Social Media Website',
+            meta: {
+                course: 'Webpack 4 session with Pushkar & Ankush'
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            chunks: ['about'],
+            title: 'About: Social Media Website',
+            meta: {
+                course: 'Webpack 4 session with Pushkar & Ankush'
+            }
         })
     ]
 })
