@@ -1,8 +1,8 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const terserPlugin = require('terser-webpack-plugin')
-const compressionPlugin = require('compression-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = () => ({
     devtool: 'nosources-source-map',
@@ -11,7 +11,7 @@ module.exports = () => ({
         path: path.resolve(__dirname, '../dist') // Needs to be an absolute path
     },
     optimization: {
-        minimizer: [new terserPlugin(), new OptimizeCssAssetsPlugin()]
+        minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin()]
     },
     module: {
         rules: [
@@ -26,7 +26,7 @@ module.exports = () => ({
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css'
         }),
-        new compressionPlugin({
+        new CompressionPlugin({
             filename: '[path].gz',
             test: /\.(js|css)$/,
             algorithm: 'gzip'
