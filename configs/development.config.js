@@ -1,4 +1,5 @@
 const path = require('path')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = () => ({
     devtool: 'inline-source-map',
@@ -19,5 +20,8 @@ module.exports = () => ({
         contentBase: '../dist',
         port: 3000,
         hot: true
-    }
+    },
+    plugins: [
+        new DashboardPlugin()
+    ]
 })
