@@ -21,7 +21,7 @@ function warningLoader (source) {
     const { regex = /\./ } = options || {}
 
     if (regex.test(source)) {
-        console.warn(chalk.yellow(`\n\nWarning Loader: \n\n\tUse of ${regex} inside ${this.resource}\n\n`))
+        console.warn(chalk.yellow.bold(`\n\nWarning Loader: \n\n\tUse of ${regex} inside ${this.resource}\n\n`))
     }
 
     return source
