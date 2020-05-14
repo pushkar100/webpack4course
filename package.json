@@ -9,6 +9,7 @@
     "webpack:dev": "npm run webpack -- --env.mode development",
     "webpack:watch": "npm run webpack -- --env.mode development --watch",
     "webpack:prod": "npm run webpack -- --env.mode production",
+    "webpack:inspect": "node --inspect --inspect-brk ./node_modules/.bin/webpack --config configs/webpack.config.js --env.mode production",
     "stats": "webpack --config configs/webpack.config.js --env.mode production --progress --profile --json > stats.json",
     "wba": "webpack-bundle-analyzer stats.json",
     "sme": "source-map-explorer dist/*.js",
@@ -39,6 +40,7 @@
     "html-webpack-plugin": "4.3.0",
     "mini-css-extract-plugin": "0.9.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
+    "schema-utils": "2.6.6",
     "source-map-explorer": "2.4.2",
     "style-loader": "1.2.1",
     "terser-webpack-plugin": "3.0.1",
@@ -48,7 +50,8 @@
     "webpack-cli": "3.3.11",
     "webpack-dashboard": "3.2.0",
     "webpack-dev-server": "3.10.3",
-    "webpack-merge": "4.2.2"
+    "webpack-merge": "4.2.2",
+    "webpack-sources": "1.4.3"
   },
   "dependencies": {
     "lodash-es": "4.17.15"

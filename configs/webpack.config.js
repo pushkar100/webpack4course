@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
+const BundleCommentsPlugin = require('./plugins/BundleCommentsWebpackPlugin')
 
 const modeConfig = mode => require(`./${mode}.config.js`)()
 
@@ -59,6 +60,10 @@ module.exports = ({ mode }) => {
             new webpack.DefinePlugin({
                 VERSION: JSON.stringify('1.0.0'),
                 'process.env.NODE_ENV': JSON.stringify(mode)
+            }),
+            new BundleCommentsPlugin({
+                text: "VERSION: 1.0.0",
+                // author: "Pushkar DK" // Validate will give an error
             })
         ]
     },
