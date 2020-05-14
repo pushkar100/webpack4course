@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const BundleCommentsPlugin = require('./plugins/BundleCommentsWebpackPlugin')
+const path = require('path')
 
 const modeConfig = mode => require(`./${mode}.config.js`)()
 
@@ -44,6 +45,16 @@ module.exports = ({ mode }) => {
                                 ]
                             ],
                             plugins: []
+                        }
+                    }
+                },
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: {
+                        loader: path.resolve(__dirname, './loaders/warning-loader.js'),
+                        options: {
+                            regex: /import\(/ // 'blah' // will throw an error
                         }
                     }
                 }
