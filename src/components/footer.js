@@ -32,17 +32,11 @@ const createFooter = () => {
 
     // Change theme on clicking the buttons:
     redButton.addEventListener('click', () => {
-        import(/* 
-            webpackChunkName: 'redTheme',
-            webpackPrefetch: true
-        */ '../themes/redTheme.js')
+        import('../themes/redTheme.js')
         .then(({ default: redTheme }) => redTheme())
     })
     greenButton.addEventListener('click', () => {
-        import(/* 
-            webpackChunkName: 'greenTheme',
-            webpackPrefetch: true
-        */ '../themes/greenTheme.js')
+        import('../themes/greenTheme.js')
         .then(({ default: greenTheme }) => greenTheme())
     })
 

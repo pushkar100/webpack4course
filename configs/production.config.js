@@ -12,7 +12,8 @@ module.exports = () => ({
         path: path.resolve(__dirname, '../dist') // Needs to be an absolute path
     },
     optimization: {
-        minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin()]
+        minimizer: [new TerserPlugin(), new OptimizeCssAssetsPlugin()],
+        chunkIds: 'named'
     },
     module: {
         rules: [
