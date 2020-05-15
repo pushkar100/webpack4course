@@ -50,6 +50,10 @@ const createFooter = () => {
 
 export default createFooter 
 
+// Top level await example:
+const awaitVal = await new Promise(resolve => setTimeout(() => resolve(10), 2000))
+console.log(awaitVal)
+
 /*
 HTML template for understanding output of the above JS snippet: 
 <div class="footer">

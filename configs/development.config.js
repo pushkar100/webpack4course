@@ -8,6 +8,10 @@ module.exports = () => ({
         chunkFilename: '[name].js',
         path: path.resolve(__dirname, '../dist') // Needs to be an absolute path
     },
+    experiments: {
+        topLevelAwait: true,
+        importAsync: true
+    },
     module: {
         rules: [
             { 
