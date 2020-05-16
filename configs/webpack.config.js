@@ -92,7 +92,8 @@ module.exports = ({ mode }) => {
                 remotes: {
                     components: 'components'
                 },
-                shared: [ 'lodash-es' ]
+                // Optionally define shared libraries or modules:
+                // shared: [ 'react', 'react-dom' ]
             })
         ]
     },
