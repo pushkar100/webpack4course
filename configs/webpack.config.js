@@ -13,6 +13,13 @@ module.exports = ({ mode }) => {
         optimization: {
             runtimeChunk: false
         },
+        experiments: {
+            topLevelAwait: true,
+            importAsync: true
+        },
+        cache: {
+            type: 'filesystem'
+        },
         entry: './src/index.js',
         module: {
             rules: [
