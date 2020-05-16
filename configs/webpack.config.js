@@ -5,6 +5,8 @@ const webpackMerge = require('webpack-merge')
 const BundleCommentsPlugin = require('./plugins/BundleCommentsWebpackPlugin')
 const path = require('path')
 
+const { ModuleFederationPlugin } = webpack.container
+
 const modeConfig = mode => require(`./${mode}.config.js`)()
 
 module.exports = ({ mode }) => {
@@ -72,7 +74,8 @@ module.exports = ({ mode }) => {
                 title: 'Social Media Website',
                 meta: {
                     course: 'Webpack 4 session with Pushkar & Ankush'
-                }
+                },
+                template: './template/index.html'
             }),
             new CleanWebpackPlugin(),
             new webpack.DefinePlugin({
@@ -82,6 +85,14 @@ module.exports = ({ mode }) => {
             new BundleCommentsPlugin({
                 text: "VERSION: 1.0.0",
                 // author: "Pushkar DK" // Validate will give an error
+            }),
+            new ModuleFederationPlugin({
+                name: 'social',
+                library: { type: 'var', name: 'social' },
+                remotes: {
+                    components: 'components'
+                },
+                shared: [ 'lodash-es' ]
             })
         ]
     },

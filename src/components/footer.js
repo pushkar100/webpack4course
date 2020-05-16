@@ -23,22 +23,48 @@ const createFooter = () => {
     const madeWith = document.createElement('div')
     madeWith.innerHTML = 'Made with &#9829; during quarantine'
 
-    // Create the buttons:
+    // Create the link to generate theme-changer buttons:
     const buttonHolder = document.createElement('div')
-    const redButton = button('Red')
-    const greenButton = button('Green')
-    buttonHolder.appendChild(redButton)
-    buttonHolder.appendChild(greenButton)
+    const generateThemeButtons = document.createElement('a')
+    generateThemeButtons.innerText = 'Select a different theme'
 
-    // Change theme on clicking the buttons:
-    redButton.addEventListener('click', () => {
-        import('../themes/redTheme.js')
-        .then(({ default: redTheme }) => redTheme())
+    generateThemeButtons.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        // Remove the 'a' link from buttonHolder:
+        buttonHolder.innerHTML = ''
+
+        // Fetch the buttons from the remote:
+        const getRedButton = () => import('components/redButton')
+        const getGreenButton = () => import('components/greenButton')
+
+        console.log(getRedButton())
+
+        // Replace buttonHolder contents with the buttons:
+        getRedButton().then(({ default: redButton }) => {
+            // Append button to div:
+            buttonHolder.appendChild(redButton)
+
+            // Change theme to red on clicking the button:
+            redButton.addEventListener('click', () => {
+                import('../themes/redTheme.js')
+                .then(({ default: redTheme }) => redTheme())
+            })
+        })
+        
+        getGreenButton().then(({ default: greenButton }) => {
+            // Append button to div:
+            buttonHolder.appendChild(greenButton)
+
+            // Change theme to green on clicking the button:
+            greenButton.addEventListener('click', () => {
+                import('../themes/greenTheme.js')
+                .then(({ default: greenTheme }) => greenTheme())
+            })
+        })
     })
-    greenButton.addEventListener('click', () => {
-        import('../themes/greenTheme.js')
-        .then(({ default: greenTheme }) => greenTheme())
-    })
+
+    buttonHolder.appendChild(generateThemeButtons)
 
     // Append all child elements to parent:
     Footer.appendChild(link)
